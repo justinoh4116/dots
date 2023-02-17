@@ -1,0 +1,9 @@
+*
+!*/
+
+#track gitignre
+!.gitignore
+
+!nvim/
+!fish/
+!starship.toml
