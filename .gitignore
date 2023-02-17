@@ -4,6 +4,6 @@
 #track gitignre
 !.gitignore
 
-!nvim/
-!fish/
+!nvim/**
+!fish/**
 !starship.toml
