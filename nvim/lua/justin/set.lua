@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.localleader = " "
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
