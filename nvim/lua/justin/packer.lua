@@ -5,12 +5,12 @@ return require('packer').startup(function(use)
     -- Packer manages itself
     use 'wbthomason/packer.nvim'
 
-use{
+use {
     'catppuccin/nvim',
     as = 'catppuccin',
-    config = function()
-        vim.cmd('colorscheme catppuccin-mocha')
-    end
+--     config = function()
+--         vim.cmd('colorscheme catppuccin-mocha')
+--     end
 }
 
 use {
@@ -86,6 +86,36 @@ use {
         require('gitsigns').setup()
     end
 }
+
+use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
+
+
+use {
+    "Maan2003/lsp_lines.nvim",
+    config = function()
+        require("lsp_lines").setup()
+    end,
+}
+
+use { "lukas-reineke/indent-blankline.nvim" }
+
+
+use({
+    "folke/noice.nvim",
+    config = function()
+    end,
+    requires = {
+        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+        "MunifTanjim/nui.nvim",
+        -- OPTIONAL:
+        --   `nvim-notify` is only needed, if you want to use the notification view.
+        --   If not available, we use `mini` as the fallback
+        "rcarriga/nvim-notify",
+    }
+})
 
 
 end)

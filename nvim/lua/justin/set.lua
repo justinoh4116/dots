@@ -25,3 +25,7 @@ vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
 
 vim.opt.signcolumn = 'yes'
+
+vim.opt.cmdheight = 1
+vim.opt.showcmd = true
+vim.opt.laststatus = 3
