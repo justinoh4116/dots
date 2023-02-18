@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>fe", vim.cmd.NvimTreeToggle)
 --
 -- center screen when using ctrl d and u
 vim.keymap.set("n", "<C-u>", "<C-u>zz")

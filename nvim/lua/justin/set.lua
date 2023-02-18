@@ -9,6 +9,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = true
+vim.opt.linebreak = false
 
 vim.opt.termguicolors = true
 
@@ -29,3 +30,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.cmdheight = 1
 vim.opt.showcmd = true
 vim.opt.laststatus = 3
+
+vim.opt.ignorecase = true
+
+vim.opt.cursorline = true

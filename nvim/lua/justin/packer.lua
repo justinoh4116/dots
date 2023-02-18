@@ -117,6 +117,79 @@ use({
     }
 })
 
+use {
+    'goolord/alpha-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+}
+
+use {
+    'petertriho/nvim-scrollbar',
+    config = function()
+        require("scrollbar").setup()
+    end
+}
+
+use {
+    "kevinhwang91/nvim-hlslens",
+    config = function()
+        require('hlslens').setup()
+        require("scrollbar.handlers.search").setup({
+            override_lens = function() end,
+        })
+    end,
+}
+
+use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
+}
+
+use { 'RRethy/vim-illuminate' }
+
+use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+})
+
+use({
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter",
+    requires = "nvim-treesitter/nvim-treesitter",
+})
+
+use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+        'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+}
+
+use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+        require("colorizer").setup({
+
+        })
+    end
+}
+
+use {
+    'j-hui/fidget.nvim',
+    config = function()
+        require('fidget').setup({
+
+        })
+    end
+}
 
 end)
 

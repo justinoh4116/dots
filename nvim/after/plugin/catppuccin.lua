@@ -31,6 +31,9 @@ require("catppuccin").setup({
     color_overrides = {},
     custom_highlights = {},
     integrations = {
+        navic = {
+            enabled = true,
+        },
         native_lsp = {
             enabled = true,
             virtual_text = {
