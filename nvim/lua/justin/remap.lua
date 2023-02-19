@@ -1,5 +1,3 @@
-vim.keymap.set("n", "<leader>fe", vim.cmd.NvimTreeToggle)
---
 -- center screen when using ctrl d and u
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -22,3 +20,6 @@ vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv")
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv")
 vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv")
 vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv")
+
+-- clear search highlights
+vim.keymap.set("n", "<leader>sc", "<cmd>nohl<CR>")
