@@ -14,6 +14,7 @@ return {
         { '<leader>fh', telescope('git_files'), desc = 'telescope_git_files' },
         { '<C-p>', telescope('live_grep'), desc = 'telescope_live_grep' },
     },
+    cmd = { 'Telescope' },
     dependencies = {
         'nvim-lua/plenary.nvim',
         {

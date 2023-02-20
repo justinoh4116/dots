@@ -10,6 +10,12 @@ return {
         },
 
         {
+            'chentoast/marks.nvim',
+            event = { 'BufReadPre', 'BufNewFile' },
+            config = true,
+        },
+
+        {
             'altermo/ultimate-autopair.nvim',
             event={'InsertEnter','CmdlineEnter'},
             config=function ()
@@ -52,15 +58,6 @@ return {
         },
 
         {
-            'goolord/alpha-nvim',
-            event = 'VimEnter',
-            dependencies = { 'nvim-tree/nvim-web-devicons' },
-            config = function ()
-                require'alpha'.setup(require'alpha.themes.dashboard'.config)
-            end
-        },
-
-        {
             "SmiteshP/nvim-navic",
             event = { 'BufReadPre', 'BufNewFile' },
             dependencies = "neovim/nvim-lspconfig"
@@ -88,16 +85,9 @@ return {
 
         {
             'norcalli/nvim-colorizer.lua',
-            ft = { 'css', 'ks', 'tsx', 'ksx' },
+            ft = { 'css', 'js', 'tsx', 'jsx' },
+            event = { 'BufReadPre', 'BufNewFile' },
             config = true,
-        },
-
-        {
-            'j-hui/fidget.nvim',
-            config = function()
-                require('fidget').setup({
-
-                })
-            end
+            opts = function() vim.cmd.ColorizerToggle() end,
         },
     }
