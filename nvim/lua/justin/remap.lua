@@ -23,3 +23,5 @@ vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
 -- clear search highlights
 vim.keymap.set("n", "<leader>sc", "<cmd>nohl<CR>")
+
+vim.keymap.set("n", "x", "\"_x")
