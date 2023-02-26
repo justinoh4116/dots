@@ -12,3 +12,5 @@ alias yay paru
 function fish_greeting
     ~/.local/bin/pfetch
 end
+
+
