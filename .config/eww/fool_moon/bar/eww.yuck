@@ -10,7 +10,6 @@
        :space-evenly false
        :spacing 7 
        :halign "start"
-    (start)
     (workspaces)))
 
 (defwidget right[]
@@ -18,7 +17,7 @@
         :space-evenly false
         :spacing 7 
         :halign "end"
-    (notifs)
+    (updates)
     (sys)
     (bat)
     (time)))
@@ -42,7 +41,6 @@
         :spacing 7 
         :halign "end"
     (updates)
-    (notifs)
     (sys)
     (bat)
     (time1)))
@@ -101,7 +99,7 @@
         :tooltip "Updates: ${update-count}"
     (label :class "updates-label" :text " ${update-count ?: '--'}")))
 
-(defpoll update-count :interval "30m" "checkupdates | wc -l")
+(defpoll update-count :interval "30m" "checkupdates-with-aur.sh | wc -l")
 
 (defwidget notifs[]
   (eventbox :class "notifs-eventbox"
