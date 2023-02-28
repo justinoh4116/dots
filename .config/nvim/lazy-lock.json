@@ -12,6 +12,7 @@
   "lazy.nvim": { "branch": "main", "commit": "8077428e63feb0f3bf795d53b23ba1695b28ab0e" },
   "lsp_lines.nvim": { "branch": "main", "commit": "dbfd8e96ec2696e1ceedcd23fd70e842256e3dea" },
   "lualine.nvim": { "branch": "master", "commit": "e99d733e0213ceb8f548ae6551b04ae32e590c80" },
+  "luasnip-latex-snippets.nvim": { "branch": "main", "commit": "d0b9f4f53ed1d3ac3c9ca7abd86d9f55431566aa" },
   "marks.nvim": { "branch": "master", "commit": "c3b18b97912720a6586fb537c5c0dfc9e06a68f1" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "93e58e100f37ef4fb0f897deeed20599dae9d128" },
   "mason.nvim": { "branch": "main", "commit": "4546dec8b56bc56bc1d81e717e4a935bc7cd6477" },
