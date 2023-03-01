@@ -52,6 +52,7 @@ return
                 ['rust_analyzer'] = function ()
                     require('rust-tools').setup({
                         server = {
+                            capabilities = lsp_capabilities,
                             on_attach = function(_, bufnr)
                                 vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, { buffer = bufnr })
                                 vim.keymap.set('n', '<leader>cl', '<cmd>LspInfo<cr>', { buffer = bufnr })
