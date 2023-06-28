@@ -5,6 +5,9 @@ return {
         ft = {'tex'},
     },
     {
+        'rafamadriz/friendly-snippets',
+    },
+    {
         'lervag/vimtex',
         event = { 'BufReadPre', 'BufNewFile' },
         init = function()
@@ -66,13 +69,13 @@ return {
 
     'nvim-tree/nvim-web-devicons',
 
-    {
-        "Maan2003/lsp_lines.nvim",
-        event = { 'BufReadPre', 'BufNewFile' },
-        config = function()
-            require("lsp_lines").setup()
-        end,
-    },
+    --     {
+    --         "Maan2003/lsp_lines.nvim",
+    --         event = { 'BufReadPre', 'BufNewFile' },
+    --         config = function()
+    --             require("lsp_lines").setup()
+    --         end,
+    --     },
 
     {
         "SmiteshP/nvim-navic",

@@ -38,7 +38,7 @@ return
             end
 
             vim.diagnostic.config({
-                virtual_text = false,
+                -- virtual_text = false,
             })
 
             local lspconfig = require('lspconfig')

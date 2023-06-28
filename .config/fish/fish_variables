@@ -5,6 +5,7 @@ SETUVAR --export PF_COL1:2
 SETUVAR --export PF_COL3:3
 SETUVAR --export PF_COLOR:1
 SETUVAR --export PF_INFO:ascii\x20title\x20os\x20pkgs\x20uptime\x20kernel\x20memory\x20palette
+SETUVAR STEAM_APP_DIR:/home/justin/\x2esteam/steamapps/common/
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/justin/\x2elocal/share/z/data
