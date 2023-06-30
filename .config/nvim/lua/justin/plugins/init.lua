@@ -1,11 +1,45 @@
 return {
     {
+        'f-person/git-blame.nvim',
+        event = { 'BufReadPre', 'BufNewFile' },
+        init = function ()
+            vim.g.gitblame_delay = 750
+        end
+    },
+    {
+        'chrisgrieser/nvim-spider',
+        lazy = true,
+    },
+    {
+        'tzachar/highlight-undo.nvim',
+        event = { 'BufReadPre', 'BufNewFile' },
+        config = function()
+            require('highlight-undo').setup({
+            })
+        end
+    },
+    {
+        'Eandrju/cellular-automaton.nvim',
+        keys = {
+            { '<leader>zz' , '<cmd>CellularAutomaton make_it_rain<cr>' },
+        },
+    },
+    {
+        'lewis6991/satellite.nvim',
+        config = true,
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
+    {
         'iurimateus/luasnip-latex-snippets.nvim',
         config = true,
         ft = {'tex'},
     },
     {
         'rafamadriz/friendly-snippets',
+        event = { 'BufReadPre', 'BufNewFile' },
+        config = function ()
+            require("luasnip.loaders.from_vscode").lazy_load()
+        end
     },
     {
         'lervag/vimtex',
