@@ -1,0 +1,4 @@
+#!/bin/sh
+
+num="$(checkupdates | wc -l)"
+expr $num + "$(paru -Qum | wc -l)"

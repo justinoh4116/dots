@@ -23,9 +23,29 @@ tooltip {
 	border: 1px solid $gray;
 }
 
+.left {
+	background-color: #1e1e2e;
+	border-radius: 12px;
+	padding: 6px 12px 6px 6px;
+}
+
+.right {
+	background-color: #1e1e2e;
+	border-radius: 12px;
+	padding: 6px 0px 6px 6px;
+}
+
+.center {
+	background-color: #1e1e2e;
+    color: $mauve;
+    font-weight: bold;
+	border-radius: 12px;
+	padding: 6px 10px 6px 10px;
+}
+
 .bar {
-	font-family: Noto Sans, "Font Awesome 6 Free";
-	background-color: #181926;
+	font-family: JetBrains Mono Nerd Font;
+	// background-color: #181926;
 	// background: radial-gradient(circle, rgba(138, 173, 244,1) 0%, rgba(138, 173, 244,1) 12%, rgba(145, 215, 227,1) 19%, rgba(189,169,247,1) 20%, rgba(182,171,247,1) 24%, rgba(138, 173, 244,1) 36%, rgba(177,172,247,1) 37%, rgba(170,173,248,1) 48%, rgba(125, 196, 228,1) 52%, rgba(166,174,248,1) 52%, rgba(160,175,248,1) 59%, rgba(139, 213, 202,1) 66%, rgba(155,176,248,1) 67%, rgba(152,177,248,1) 68%, rgba(73, 77, 100,1) 77%, rgba(148,178,249,1) 78%, rgba(144,179,250,1) 82%, rgba(180,190,254,1) 83%, rgba(141,179,250,1) 90%, rgba(137,180,250,1) 100%); 
 	// background-size: 200% 200%;
 	// animation: gradient_f linear infinite;
@@ -36,11 +56,10 @@ tooltip {
 	//background-color: rgba(24, 24, 33, 0.65);
 	// border-bottom: 1px solid $gray;
     margin: 10px 14px 0px 14px;
-	border-radius: 12px;
-	padding: 4px;
 }
 
 .left-bar, .right-bar {
+
 }
 
 .start-box {
@@ -124,17 +143,18 @@ tooltip {
 }
 
 .updates {
-    font-size: 14px;
+    font-size: 18px;
 	font-weight: bold;
-	color: $bg;
-	background-color: $mint;
+	color: $green;
+	// background-color: $mint;
 	border-radius: 8px;
 	padding: 0.25rem 0.6rem;
 }
 
 .sys {
-	background-color: $blue;
-	color: $bg;
+	// background-color: $blue;
+	color: $blue;
+    font-size: 18px;
 	border-radius: 8px;
 	padding: 0.4rem 0.5rem;
 
@@ -143,12 +163,19 @@ tooltip {
 	}
 
 	.wifi-on {
-		color: $bg;
+		color: $blue;
 	}
 
 	.wifi-off {
 		color: $gray;
 	}
+}
+
+.vol {
+    font-size: 18px;
+    color: $light-blue;
+    font-weight: bold;
+	padding: 0.25rem 0rem 0.25rem 0.6rem;
 }
 
 .sys:hover {
@@ -171,19 +198,36 @@ tooltip {
 	padding: 0.2rem 0.7rem;
 }
 
+.bat {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.bat.high {
+    color: $teal;
+}
+.bat.med {
+    color: $yellow;
+}
+.bat.low {
+    color: $red;
+}
+
 .bat-box {
-	color: $bg;
+	// background-color: $bg;
+    font-size: 18px;
+	padding: 0.25rem 0.6rem;
 
 	.bat-icon.high {
-		background-color: $teal;
+		color: $teal;
 	}
 
 	.bat-icon.med {
-		background-color: $yellow;
+		color: $yellow;
 	}
 
 	.bat-icon.low {
-		background-color: $red;
+		color: $red;
 	}
 
 	.bat-label {
@@ -200,37 +244,37 @@ tooltip {
 
 	scale.bat-scale trough {
 		all: unset;
-		background-color: $gray;
+		// background-color: $gray;
 		border-radius: 8px;
 		min-height: 25px;
 		min-width: 60px;
 	}
 
 	scale.bat-scale.high trough {
-		background-color: $teal;
+		// background-color: $teal;
 	}
 
 	scale.bat-scale.med trough {
-		background-color: $yellow;
+		// background-color: $yellow;
 	}
 
 	scale.bat-scale.low trough {
-		background-color: $red;
+		// background-color: $red;
 	}
 
 
 	.bat-scale.high trough highlight {
-		background-color: $teal;
+		// background-color: $teal;
 		border-radius: 8px;
 	}
 
 	.bat-scale.med trough highlight {
-		background-color: $yellow;
+		// background-color: $yellow;
 		border-radius: 8px;
 	}
 
 	.bat-scale.low trough highlight {
-		background-color: $red;
+		// background-color: $red;
 		border-radius: 8px;
 	}
 }
@@ -241,9 +285,9 @@ tooltip {
 
 .time-eventbox {
 	font-weight: bold;
-	font-size: 14px;
-	color: $bg;
-	background-color: $mauve;
+	font-size: 18px;
+	color: $mauve;
+	//background-color: $bg;
 	border-radius: 8px;
 }
 

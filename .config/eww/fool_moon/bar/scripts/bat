@@ -10,24 +10,54 @@ function charging() {
 
 function icon() {
 	if charging;then
-		echo ""
+        if (( $(level) < 10 ));then
+            echo "󰢜"
+        elif (( $(level) < 20 ));then
+            echo "󰂆"
+        elif (( $(level) < 30 ));then
+            echo "󰂇"
+        elif (( $(level) < 40 ));then
+            echo "󰂈"
+        elif (( $(level) < 50 ));then
+            echo "󰢝"
+        elif (( $(level) < 60 ));then
+            echo "󰂉"
+        elif (( $(level) < 70 ));then
+            echo "󰢞"
+        elif (( $(level) < 80 ));then
+            echo "󰂊"
+        elif (( $(level) < 90 ));then
+            echo "󰂋"
+        else
+            echo "󰂅"
+        fi
+	elif (( $(level) < 10 ));then
+        echo "󰁺"
 	elif (( $(level) < 20 ));then
-        echo ""
+        echo "󰁻"
+	elif (( $(level) < 30 ));then
+        echo "󰁼"
 	elif (( $(level) < 40 ));then
-        echo ""
+        echo "󰁽"
+	elif (( $(level) < 50 ));then
+        echo "󰁾"
 	elif (( $(level) < 60 ));then
-        echo ""
+        echo "󰁿"
+	elif (( $(level) < 70 ));then
+        echo "󰂀"
 	elif (( $(level) < 80 ));then
-        echo ""
+        echo "󰂁"
+	elif (( $(level) < 90 ));then
+        echo "󰂂"
     else
-        echo ""
+        echo "󰁹"
     fi
 }
 
 function class() {
 	if (( $(level) < 20 ));then
 		echo "low"
-	elif (( $(level) < 60 ));then
+	elif (( $(level) < 70 ));then
 		echo "med"
 	else
 		echo "high"

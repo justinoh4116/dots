@@ -13,13 +13,13 @@ function icon() {
 	local muted=$(pamixer --get-mute)
 
 	if [ "$muted" = "true" ]; then
-		echo "" 
+		echo "󰝟" 
 	elif (( per >= 60 )); then
-		echo "" 
+		echo "󰕾" 
 	elif (( per >= 20 )); then
-		echo "" 
+		echo "󰖀" 
 	elif (( per <= 20 )); then
-		echo "" 
+		echo "󰕿" 
 	fi
 }
 

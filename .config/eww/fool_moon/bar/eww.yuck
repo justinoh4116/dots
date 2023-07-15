@@ -1,8 +1,10 @@
 (defvar eww "eww -c ~/.config/eww/fool_moon/bar")
 (deflisten workspace "scripts/workspace")
 (defwidget main []
-  (box :class "bar"
+  (centerbox :class "bar"
+       :width "100%"
     (left)
+    (center)
     (right)))
 
 (defwidget left[]
@@ -17,10 +19,19 @@
         :space-evenly false
         :spacing 7 
         :halign "end"
+    (vol)
     (updates)
-    (sys)
     (bat)
     (time)))
+
+(defwidget center[]
+  (box  :class "center"
+        :space-evenly false
+        :spacing 7
+        :halign "center"
+    (window)
+  )
+)
 
 (defwidget main1 []
   (box :class "bar"
@@ -40,8 +51,8 @@
         :space-evenly false
         :spacing 7 
         :halign "end"
+    (vol)
     (updates)
-    (sys)
     (bat)
     (time1)))
 
@@ -93,13 +104,14 @@
 ; 
 ; (deflisten cava-bars "scripts/cavabars")
 
+
 (defwidget updates[]
   (box :class "updates"
         :valign "center"
         :tooltip "Updates: ${update-count}"
     (label :class "updates-label" :text " ${update-count ?: '--'}")))
 
-(defpoll update-count :interval "30m" "checkupdates-with-aur.sh | wc -l")
+(defpoll update-count :interval "30m" "scripts/updatecount")
 
 (defwidget notifs[]
   (eventbox :class "notifs-eventbox"
@@ -109,41 +121,57 @@
 
 (deflisten notif-count :initial "0" "~/.local/.scripts/notifs count")
 
-(defwidget sys[]
-  (box :spacing 10
-       :class "sys"
-       :valign "center"
-    (label :class "vol-icon" :text vol-icon)
-    (label :class "wifi-icon ${wifi-class}" :text "")))
+;; (defwidget sys[]
+;;   (box :spacing 10
+;;        :class "sys"
+;;        :valign "center"
+;;     (label :class "vol-icon" :text vol-icon)
+;;     (label :class "wifi-icon ${wifi-class}" :text "")))
 
+(defwidget vol[]
+    (box    :spacing 10
+            :class "vol"
+            :valign "center"
+        (label :class "vol-icon" :text vol-icon)
+    )
+)
+
+
+(defpoll vol-level :interval "1s" "../commmon/scripts/vol percent")
 (defpoll vol-icon :interval "1s" "../common/scripts/vol icon")
 (defpoll wifi-class :interval "1s" "scripts/wifi class")
 (defpoll bat-icon :interval "1s" "scripts/bat icon")
 
+;; (defwidget bat[]
+;;   (eventbox :class "bat-eventbox"
+;;             :onhover "${eww} update bat-vis=true"
+;;             :onhoverlost "${eww} update bat-vis=false"
+;;     (box :class "bat-box ${bat-class}"
+;;          :orientation "v"
+;;          :valign "center"
+;;       (overlay
+;;         (scale :class "bat-scale ${bat-class}" :active false :min 0 :max 101 :value bat-val)
+;;         (box :orientation "v"
+;;              :space-evenly false
+;;              :valign "center"
+;;           (revealer :class "bat-reveal" :reveal bat-vis
+;;                     :transition "slideup"
+;;                     :duration "550ms"
+;;             (label :class "bat-label" :halign "center" :valign "center" :text "${bat-val}%"))
+;;           (revealer :class "bat-reveal" :reveal {!bat-vis}
+;;                     :transition "slideup"
+;;                     :duration "550ms"
+;;             (label :class "bat-icon" :halign "center" :valign "center" :height 25 :width 25 :text bat-icon)))))))
+
+
 (defwidget bat[]
-  (eventbox :class "bat-eventbox"
-            :onhover "${eww} update bat-vis=true"
-            :onhoverlost "${eww} update bat-vis=false"
-    (box :class "bat-box ${bat-class}"
-         :orientation "v"
-         :valign "center"
-      (overlay
-        (scale :class "bat-scale ${bat-class}" :active false :min 0 :max 101 :value bat-val)
-        (box :orientation "v"
-             :space-evenly false
-             :valign "center"
-          (revealer :class "bat-reveal" :reveal bat-vis
-                    :transition "slideup"
-                    :duration "550ms"
-            (label :class "bat-label" :halign "center" :valign "center" :text "${bat-val}%"))
-          (revealer :class "bat-reveal" :reveal {!bat-vis}
-                    :transition "slideup"
-                    :duration "550ms"
-            (label :class "bat-icon" :halign "center" :valign "center" :height 25 :width 25 :text bat-icon)))))))
+  (box :class "bat ${bat-class}"
+        :valign "center"
+        :tooltip "Updates: ${update-count}"
+    (label :class "bat-label" :text "${bat-icon} ${bat-val}%")))
 
 (defpoll bat-val :initial 0 :interval "1s" "scripts/bat level")
 (defpoll bat-class :interval "1s" "scripts/bat class")
-(defvar bat-vis false)
 
 (defwidget time1[]
   (box :class "time-box"
@@ -152,7 +180,7 @@
     (eventbox :class "time-eventbox"
               :onclick "scripts/widgets toggle-time1 ; scripts/blank"
               :cursor "pointer"
-      (label :class "time-label" :text "   ${time-lbl}"))))
+      (label :class "time-label" :text " ${time-lbl}"))))
 
 (defwidget time[]
   (box :class "time-box"
@@ -161,9 +189,16 @@
     (eventbox :class "time-eventbox"
               :onclick "scripts/widgets toggle-time ; scripts/blank"
               :cursor "pointer"
-      (label :class "time-label" :text "   ${time-lbl}"))))
+      (label :class "time-label" :text " ${time-lbl}"))))
 
 (defpoll time-lbl :interval "1s" "date +'%H:%M'")
+
+(deflisten window-title :initial "..." "sh scripts/window_title")
+
+(defwidget window[]
+  (box :class "window"
+        :valign "center"
+    (label :class "bat-label" :text "${window-title}")))
 
 (defwindow bar0
   :monitor 0
